@@ -32,7 +32,7 @@
     # Enter passphrase (empty for no passphrase):<输入你设置的密码>
     # Enter same passphrase again:<输入你设置的密码>
    ```
-   ![image-20200311173142995](assets/image-20200311173142995.png)
+   ![image-20200311173142995](./assets/image-20200311173142995.png)
    
 4. 配置Github
 
@@ -210,7 +210,7 @@ git branch –unset-upstream master
 
 ## 三、概念分析
 
-- 工作区: 一般就是工程区或者模块区(也就相当于[Android](http://lib.csdn.net/base/android) Studio的项目名称根目录),但是工作区下面的 
+- 工作区: 一般就是工程区或者模块区 
 - 隐藏文件夹.[Git](http://lib.csdn.net/base/git)不属于工作区 
 - 版本库: 就是.[git](http://lib.csdn.net/base/git)目录.版本库里面存了很多东西，其中最重要的就是stage(暂存区)，还有Git为我们自动创建了第一 个分支master,以及指向master的一个指针HEAD。
 

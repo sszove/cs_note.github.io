@@ -23,14 +23,14 @@
    - Git Bash
    
    ```
-    # 查看是否有秘钥，有则备份然后删除文件夹
-    cd ~/.ssh 
-    ls
-    
-    # 生成，enter确认
- ssh-keygen -t rsa -C “[email]xx@xx” 
-    # Enter passphrase (empty for no passphrase):<输入你设置的密码>
-    # Enter same passphrase again:<输入你设置的密码>
+   # 查看是否有秘钥，有则备份然后删除文件夹
+   cd ~/.ssh 
+   ls
+
+   # 生成，enter确认
+   ssh-keygen -t rsa -C “[email]xx@xx” 
+   # Enter passphrase (empty for no passphrase):<输入你设置的密码>
+   # Enter same passphrase again:<输入你设置的密码>
    ```
    ![image-20200311173142995](./assets/image-20200311173142995.png)
    
@@ -41,7 +41,7 @@
     - 添加私钥到ssh：(optional)
 
       ```
-       ssh -add id_rsa
+      ssh -add id_rsa
       ```
 
 5. 测试本机是否有访问Github的权限 ，输入密码确认

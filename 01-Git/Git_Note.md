@@ -85,126 +85,123 @@
 ## 三、基本操作 
 
 1. 目录&文件操作
-
-```
-# Linux shell cmd
-cd d: 
-cd dir 
-mkdir FirstProgram 
-cd FirstProgram 
-pwd
-# 查看内容 
-cat readme.txt 
-# 删除文件 
-rm b.txt 
-# else
-```
-
+    ```
+    # Linux shell cmd
+    cd d: 
+    cd dir 
+    mkdir FirstProgram 
+    cd FirstProgram 
+    pwd
+    # 查看内容 
+    cat readme.txt 
+    # 删除文件 
+    rm b.txt 
+    # else
+    ```
 2. 常用操作
-```
-# 添加到暂存区
-git add readme.txt
-# 未提交时 出现红色提醒
-git status
-git commit -m ‘提交时的注释 描述’ 
-git status(提交后 出现绿色提醒) 
-# 自动更新变化的文件
-git commit -a
-# 修改前后的对比查看
-git diff readme.txt
-```
+    ```
+    # 添加到暂存区
+    git add readme.txt
+    # 未提交时 出现红色提醒
+    git status
+    git commit -m ‘提交时的注释 描述’ 
+    git status(提交后 出现绿色提醒) 
+    # 自动更新变化的文件
+    git commit -a
+    # 修改前后的对比查看
+    git diff readme.txt
+    ```
 3. log
-```
-# 查看提交历史,倒序记录: 信息包括提交版本号,作者,时间,提交内容
-git log
-# 简要查看历史,每次修改显示在一行
-git log –pretty=oneline
-```
+    ```
+    # 查看提交历史,倒序记录: 信息包括提交版本号,作者,时间,提交内容
+    git log
+    # 简要查看历史,每次修改显示在一行
+    git log –pretty=oneline
+    ```
 4. 版本回退
-```
-# 把当前的版本回退到上1个版本
-git reset –hard HEAD^
-# 回退到上上1个版本
-git reset –hard HEAD^^
-# (把当前的版本回退到上100个版本) 
-git reset –hard HEAD~100
-# 撤销修改但还没添加到缓存区stage的内容
-git checkout –readme.txt
-git reflog 
-# 回退到制定版本
-git reset -hard [版本号]
-```
-
+    ```
+    # 把当前的版本回退到上1个版本
+    git reset –hard HEAD^
+    # 回退到上上1个版本
+    git reset –hard HEAD^^
+    # (把当前的版本回退到上100个版本) 
+    git reset –hard HEAD~100
+    # 撤销修改但还没添加到缓存区stage的内容
+    git checkout –readme.txt
+    git reflog 
+    # 回退到制定版本
+    git reset -hard [版本号]
+    ```
 5. 远端仓库管理
-```
-# 删除远程端仓库xxx, 比如origin是远程仓库<即URL地址>别名) 
-git remote remove xxx
-# 添加remote仓库
-git remote add origin git@xxx
-# 重命名远端仓库
-git remote rename github newgit
-```
+    ```
+    # 删除远程端仓库xxx, 比如origin是远程仓库<即URL地址>别名) 
+    git remote remove xxx
+    # 添加remote仓库
+    git remote add origin git@xxx
+    # 重命名远端仓库
+    git remote rename github newgit
+    ```
 6. Branch分支创建
-```
-# 显示当前分支
-git branch
-# 显示所有分支
-git branch -a
-# 创建分支
-git branch xx-branch
-# 切换到新分支，从一个分支切换另一个分支需要先pull
-git checkout xx-branch
+    ```
+    # 显示当前分支
+    git branch
+    # 显示所有分支
+    git branch -a
+    # 创建分支
+    git branch xx-branch
+    # 切换到新分支，从一个分支切换另一个分支需要先pull
+    git checkout xx-branch
 
-# 从已有的分支创建新的分支(如从master分支),创建一个dev(develop简写)分支(相当于复制分支) 
-git checkout -b dev 
+    # 从已有的分支创建新的分支(如从master分支),创建一个dev(develop简写)分支(相当于复制分支) 
+    git checkout -b dev 
 
-# 把分支push到远端分支–>可以看到远端分支是push时产生的 
-git add page_cache.inc.php 
-git commit -a -m “added initial version of page cache” 
-# 分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为
-git push origin xx-branch
+    # 把分支push到远端分支–>可以看到远端分支是push时产生的 
+    git add page_cache.inc.php 
+    git commit -a -m “added initial version of page cache” 
+    # 分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为
+    git push origin xx-branch
 
-# 另一种push分支;如果是在当前loc-dev分支下,则可以只写git push 
-git push origin loc-dev:remote-branch-dev 
- 
-# 分支拉取 
-git pull origin dev
-/*
-或者： 
-运行git fetch(前提是已经关联了本地与远端),可以将远程分支信息获取到本地， 
-再运行git checkout -b loc-v2 origin/remote-branch-v2就可以将远程分支映射到本地命名为loc-v2的一分支 
-*/
-```
+    # 另一种push分支;如果是在当前loc-dev分支下,则可以只写git push 
+    git push origin loc-dev:remote-branch-dev 
+
+    # 分支拉取 
+    git pull origin dev
+    /*
+    或者： 
+    运行git fetch(前提是已经关联了本地与远端),可以将远程分支信息获取到本地， 
+    再运行git checkout -b loc-v2 origin/remote-branch-v2就可以将远程分支映射到本地命名为loc-v2的一分支 
+    */
+    ```
 7. master-branch管理
-```
-# 本地分支合并,把分支合并到主干
-git checkout master
-git merge xx-branch
+    ```
+    # 本地分支合并,把分支合并到主干
+    git checkout master
+    git merge xx-branch
 
-# 远程分支合并(多一个远端地址和一个反斜杠/) 
-git merge origin/b 
-git branch # 显示当前分支是master
-git push # 此时主干中也合并了xx-branch的代码
+    # 远程分支合并(多一个远端地址和一个反斜杠/) 
+    git merge origin/b 
+    git branch # 显示当前分支是master
+    git push # 此时主干中也合并了xx-branch的代码
 
-# 冲突解决：暂存本地内容，再pull
-git stash
-git pull 
-git stash pop stash@{0}  # stash@{0}修改标记，还原暂存的内容
-```
+    # 冲突解决：暂存本地内容，再pull
+    git stash
+    git pull 
+    git stash pop stash@{0}  # stash@{0}修改标记，还原暂存的内容
+    ```
 8. 删除分支
-```
-# 删除分支(前提是被删除的分支不是当前所在分支,否则删除不了) 
-git pull origin –delete dev 
-# 另一种删除分支 
-git push origin :dev 
-```
+    ```
+    # 删除分支(前提是被删除的分支不是当前所在分支,否则删除不了) 
+    git pull origin –delete dev 
+    # 另一种删除分支 
+    git push origin :dev 
+    ```
 9. 消除master分支的追踪 
-```
-# 设置指定分支 
-git branch –set-upstream-to=origin/dev 
-# 取消对master的跟踪 
-git branch –unset-upstream master
-```
+    ```
+    # 设置指定分支 
+    git branch –set-upstream-to=origin/dev 
+    # 取消对master的跟踪 
+    git branch –unset-upstream master
+    ```
 
 
 

@@ -96,6 +96,12 @@ trusted-host=mirrors.aliyun.com
 
 ### 4.1 Pip离线安装包
 
+[Python Extension Packages for Windows - Christoph Gohlke](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pil)
+
+[PyPI - the Python Package Index : Python Package Index](https://pypi.python.org/pypi)
+
+也可copy install过程中显示的download网址
+
 - tar.gz 后缀的文件
   - 解压文件
   - 通过cmd/terminal，进入解压后的根目录

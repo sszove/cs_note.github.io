@@ -2,18 +2,17 @@
 
 [TOC]
 
-
 ## 一、本机配置
 
 1. 添加用户
 
-    ``` 
+    ``` shell
     git config –global user.name “xx” 
     git config –gloaba user.email “xx@xx”
     ```
 
 2. 查看git配置及用户信息 
-    ```
+    ```shell
     git config –list
     ```
 
@@ -25,7 +24,7 @@
    
    - Git Bash
    
-   ```
+   ```shell
    # 查看是否有秘钥，有则备份然后删除文件夹
    cd ~/.ssh 
    ls
@@ -43,13 +42,13 @@
 
     - 添加私钥到ssh：(optional)
 
-      ```
+      ```shell
       ssh -add id_rsa
       ```
 
 5. 测试本机是否有访问Github的权限 ，输入密码确认
 
-    ```
+    ```shell
     ssh -T git@github.com
     ```
 
@@ -59,7 +58,7 @@
 
 1. local  to remote: 
    
-   ```
+   ```shell
    # 初始化
    git init
    # 添加remote仓库
@@ -79,7 +78,7 @@
    
 2. Github已经创建好Repo
 
-   ```
+   ```shell
    git clone git@github.com:xx/xx.git
    ```
 
@@ -88,7 +87,7 @@
 ## 三、基本操作 
 
 1. 目录&文件操作
-    ```
+    ```shell
     # Linux shell cmd
     cd d: 
     cd dir 
@@ -102,7 +101,7 @@
     # else
     ```
 2. 常用操作
-    ```
+    ```shell
     # 添加到暂存区
     git add readme.txt
     # 未提交时 出现红色提醒
@@ -115,14 +114,14 @@
     git diff readme.txt
     ```
 3. log
-    ```
+    ```shell
     # 查看提交历史,倒序记录: 信息包括提交版本号,作者,时间,提交内容
     git log
     # 简要查看历史,每次修改显示在一行
     git log –pretty=oneline
     ```
 4. 版本回退
-    ```
+    ```shell
     # 把当前的版本回退到上1个版本
     git reset –hard HEAD^
     # 回退到上上1个版本
@@ -136,7 +135,7 @@
     git reset -hard [版本号]
     ```
 5. 远端仓库管理
-    ```
+    ```shell
     # 删除远程端仓库xxx, 比如origin是远程仓库<即URL地址>别名) 
     git remote remove xxx
     # 添加remote仓库
@@ -145,7 +144,7 @@
     git remote rename github newgit
     ```
 6. Branch分支创建
-    ```
+    ```shell
     # 显示当前分支
     git branch
     # 显示所有分支
@@ -176,7 +175,7 @@
     */
     ```
 7. master-branch管理
-    ```
+    ```shell
     # 本地分支合并,把分支合并到主干
     git checkout master
     git merge xx-branch
@@ -192,14 +191,14 @@
     git stash pop stash@{0}  # stash@{0}修改标记，还原暂存的内容
     ```
 8. 删除分支
-    ```
+    ```shell
     # 删除分支(前提是被删除的分支不是当前所在分支,否则删除不了) 
     git pull origin –delete dev 
     # 另一种删除分支 
     git push origin :dev 
     ```
 9. 消除master分支的追踪 
-    ```
+    ```shell
     # 设置指定分支 
     git branch –set-upstream-to=origin/dev 
     # 取消对master的跟踪 
@@ -216,7 +215,39 @@
 
 
 
-## 五、总结
+## 五、实际应用
+
+#### 1 恢复修改的文件
+
+对于恢复修改的文件，就是将文件从仓库中拉到本地工作区，即 仓库区 ----> 暂存区 ----> 工作区。
+
+对于修改的文件有两种情况：
+
+- 只是修改了文件，***没有任何 git 操作***
+
+  ```shell
+  git checkout -- modified.txt
+  ```
+
+- 修改了文件，并提交到***暂存区***（git add，但没有 git commit -m ....）
+
+  ```shell
+  git log --oneline    # 可以省略
+  git reset HEAD    # 回退到当前版本
+  git checkout -- modified.txt
+  ```
+
+- 修改了文件，并提交到***仓库区***（git add   &  git commit -m ....）
+
+  ```shell
+  git log --oneline
+  git reset HEAD^    # 回退到上一个版本
+  git checkout -- modified.txt
+  ```
+
+
+
+## 六、总结
 
 ![Git_use](./assets/Git_use.png)
 

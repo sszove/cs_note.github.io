@@ -6,4 +6,4 @@
 
 [Git](./01-Git/Git_Note.md)
 
-[Conda管理]()
+[Conda](./02-Conda)

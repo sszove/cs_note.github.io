@@ -6,7 +6,7 @@
 
 # 2. Conda
 
--  [conda](./02-Conda/conda.md)
+-  [conda环境管理、导入导出等](./02-Conda/conda.md)
 - [pytorch&tensorflow安装示例](./02-Conda/pytorch安装示例.md)
 
 # 3. Jupyter

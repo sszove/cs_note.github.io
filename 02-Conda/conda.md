@@ -152,6 +152,7 @@ conda remove -n tf2.0 --all
 - 更新指定包：`conda update xxx`
 - 更新所有包：`conda update --all`
 - 查看已安装的包：`conda list`
+- 删除指定包 `conda remove xxx`
 
 
 

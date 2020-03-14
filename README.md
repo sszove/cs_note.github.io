@@ -1,9 +1,14 @@
 [TOC]
 
-[Github Markdown](https://guides.github.com/features/mastering-markdown/)
+# 1. Git
 
+ [Git](./01-Git/Git_Note.md)相关的使用记录
 
+# 2. Conda
 
-[Git](./01-Git/Git_Note.md)
+-  [conda](./02-Conda/conda.md)
+- [pytorch&tensorflow安装示例](./02-Conda/pytorch安装示例.md)
 
-[Conda](./02-Conda)
+# 3. Jupyter
+
+[Jupyter的配置和插件推荐](./03-Jupyter/Jupyter.md)

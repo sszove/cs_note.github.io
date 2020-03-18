@@ -103,10 +103,15 @@ trusted-host=mirrors.aliyun.com
 也可copy install过程中显示的download网址
 
 - tar.gz 后缀的文件
-  - 解压文件
-  - 通过cmd/terminal，进入解压后的根目录
-  - 通过python命令安装：<font color='red'>`python setup.py install`</font>，根据安装提示信息，如果有前置依赖，则退出，先安装前置依赖
+
+  - 可以直接 cd 到文件所在目录，确保已安装setuptool，直接使用<font color='red'>`pip install xxx.tar.gz`</font>
+  - 另一种方式：
+     - 解压文件
+     - 通过cmd/terminal，进入解压后的根目录
+     - 通过python命令安装：<font color='red'>`python setup.py install`</font>，根据安装提示信息，如果有前置依赖，则退出，先安装前置依赖
+
 - whl文件（本质是一个 .zip 包）
+  
   - <font color='red'>`pip install D:\opencv_python-4.1.2.30-cp37-cp37m-win_amd64.whl `</font>
 
 ### 4.2 Conda离线安装包
